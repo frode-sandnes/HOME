@@ -1,0 +1,281 @@
+
+
+a:link  {
+	font-weight: normal; 
+        color: rgb(226, 147, 1); 
+        font-style: normal; 
+        text-decoration: none;
+        }
+
+a:visited 
+        {
+	font-weight: normal; 
+        color: rgb(221, 185, 118); 
+        font-style: normal; 
+        text-decoration: none
+        }
+ 
+a:hover {
+	  font-weight: normal; 
+        color: rgb(255, 251, 0); 
+        font-style: normal; 
+        background-color: rgb(250, 0, 125); 
+        text-decoration: none;
+        }
+
+
+
+a[href^="https://"]::after 
+        {
+        content: " \f08e";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 3px;
+        }
+a[href^="http://"]::after 
+        {
+        content: " \f08e";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-decoration: none;
+        padding-left: 3px;
+        }
+
+
+body    {
+        background-color: rgb(27, 26, 22);    
+        font-FAMILY: Arial;
+        transition: background-color 2s;           
+        }
+
+.container 
+        { 
+        gap: 1em;
+        display: grid;	   
+        border: 1em;            
+        }
+    
+.pubs 
+        {   
+        padding: 1em;                                  
+        grid-area: pubs;	                
+        font-weight: normal; 
+        color: rgb(199, 186, 1); 
+
+        transition: background-color 2s;   
+        }
+
+
+.recent
+        {   
+        padding: 1em;                                  
+        grid-area: recent;	                
+        color: rgb(163, 152, 1); 
+
+        transition: background-color 2s;               
+        }
+
+.merits
+        {  
+        padding: 1em;                                  
+        grid-area: merits;	                
+        color: rgb(163, 152, 1); 
+
+        transition: background-color 2s;                         
+        }
+
+.contact
+        { 
+        padding: 1em;                                  
+        grid-area: contact;	                
+        color: rgb(199, 186, 1); 
+        background-color: rgb(102, 95, 1);     
+        transition: background-color 2s;                      
+        }
+
+.header
+        {
+        padding: 1em;                                  
+        grid-area: header;	                
+        background-color: rgb(102, 95, 1);                    
+        color: rgb(199, 186, 1); 
+        transition: background-color 2s;  
+        transition: color 2s;                                      
+        }        
+
+
+@media screen 
+and (max-width: 40em) 
+        {
+        h1::after
+                {
+                content: " (slim)";  
+                color: rgb(139, 130, 1);                         
+                }
+        .container  
+                {
+                grid-template: 
+                        "header"
+                        "contact"
+                        "recent"
+                        "pubs"
+                        "merits";
+                }
+        body    
+                {
+                background-color: black;                                                
+                }                
+        .header
+                {
+                color: red;                             
+                background-color: rgb(22, 19, 1);                                                 
+                }  
+        .contact
+                {
+
+                background-color: rgb(22, 19, 1);         
+                }   
+        img 
+                {	
+                filter:  saturate(2) contrast(200%) brightness(150%);                    	
+                }                                                   
+        }
+
+@media screen 
+and (min-width: 40em) 
+and (max-width: 75em) 
+          { 
+        h1::after
+                {
+                content: " (narrow)";    
+                color: rgb(139, 130, 1);                        
+                }                       
+        .container  
+                {                         
+                grid-template: 
+                        "header header"
+                        "contact recent"
+                        "pubs merits";
+                }
+        body    
+                {
+                background-color: rgb(9, 9, 8);                                           
+                }                
+
+        .header
+                {
+                color: rgb(255, 73, 5);                          
+                background-color: rgb(42, 38, 1);                                                
+                }  
+        .contact
+                {
+                background-color: rgb(42, 38, 1);     
+                }  
+        .merits, .recent 
+                {
+                color: rgb(167, 156, 1);
+                }                
+        img 
+                {	
+                filter:  contrast(200%) brightness(150%);                 	
+                }  
+                                                 
+        }		
+
+
+@media screen 
+and (min-width: 75em) 
+and (max-width: 100em) 
+        {    
+        h1::after
+                {
+                content: " (medium)";
+                color: rgb(139, 130, 1);                            
+                }                              
+        .container  
+                {                            
+                grid-template: 
+                        "header header header"
+                        "contact pubs merits"
+                        "recent pubs merits"
+                        ". pubs merits"
+                        ". pubs .";
+                }
+        body    
+                {
+                background-color: rgb(18, 18, 15);   
+                                          
+                }    
+        .header
+                {
+                color: rgb(255, 87, 255);                                                         
+                background-color: rgb(62, 57, 1);                                                  
+                }          
+        .contact
+                {
+                color: rgb(219, 203, 2);
+                background-color: rgb(62, 57, 1);        
+                }    
+        .merits, .recent 
+                {
+                color: rgb(172, 161, 1);
+                }   
+                
+        img 
+                {	
+                filter:  contrast(150%) brightness(125%);                                       	
+                }                                                          
+        }		
+
+@media screen 
+and (min-width: 100em) 
+          { 
+        h1::after
+                {
+                content: " (wide)";
+                color: rgb(139, 130, 1);                            
+                }                 
+        .container  
+                {
+                max-width: 150em;                       
+                grid-template: 
+                "header header header header"
+                "contact recent pubs merits"
+                ". recent pubs merits";
+                }
+        body    
+                {
+                background-color: rgb(27, 26, 22);     
+                                  
+                }   
+        .header
+                {
+                color: greenyellow;                                               
+                background-color: rgb(82, 76, 1);                                
+                }    
+        .contact
+                {
+                color: rgb(250, 234, 1);
+                background-color: rgb(82, 76, 1);                        
+                }    
+         .merits, .recent 
+                {
+                color: rgb(179, 167, 1);
+                }   
+                    
+        img 
+                {	
+                filter: brightness(0%);                                	
+                }     
+        a:link
+                {
+                color: rgb(227, 148, 1);
+                }                                                           
+        }		
+
+		
